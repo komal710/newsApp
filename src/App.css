@@ -36,3 +36,12 @@
     transform: rotate(360deg);
   }
 }
+.dark-card {
+  background-color: grey;
+  color: white;
+}
+
+.light-card {
+  background-color: white;
+  color: black;
+}
