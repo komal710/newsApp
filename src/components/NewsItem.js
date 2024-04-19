@@ -13,37 +13,42 @@ export class NewsItem extends Component {
     const truncatedDescription =description.length > MAX_DESCRIPTION_LENGTH ? `${description.slice(0, MAX_DESCRIPTION_LENGTH)}...`: description;
                     
     return (
-      <div className="my-4" >
-        <div className={`card ${mode === 'dark' ? 'dark-card' : 'light-card'}`} style={{ width: "18rem" }}>
-        <span className="position-absolute top-0 translate-middle badge rounded-pill bg-danger" style={{left: '90%', zIndex:'1'}}>
+      <div className="my-3" >
+        <div className={`card ${mode === 'dark' ? 'dark-card' : 'light-card'}`}>
+        <div style={{display:'flex', justifyContent:'flex-end', position:'absolute', right:'0'}}>
+        <span className="badge rounded-pill bg-danger">
               {source}
               </span>
+              </div>
           <img
+
             src={
               !imageUrl ? "https://s.abcnews.com/images/US/abc_news_default_2000x2000_update_16x9_992.jpg" : imageUrl                
             }
             className="card-img-top"
             alt="..."
           />
+          
           <div className={`card-body ${mode === 'dark' ? 'dark-card' : 'light-card'}`}>
             <h5 className="card-title">
               {truncatedTitle}...              
             </h5>
             <p className="card-text">{truncatedDescription}...</p>
             <p className="card-text">
-              <small className="text-muted">
+              <small className="text-white">
                 By {!author ? "unknown" : author} on {new Date(date).toGMTString()}
               </small>
             </p>
-            <a
+            <Link
               rel="noreferrer"
-              href={newsUrl}
+              to={newsUrl}
               target="_blank"
               className="btn btn-sm btn-primary"
             >
               Read More
-            </a>
-          </div>
+            </Link>
+          
+        </div>
         </div>
       </div>
     );

@@ -6,9 +6,9 @@ export class Navbar extends Component {
   render() {
     const { mode, toggleMode } = this.props;
       return (
-      //<nav className= {mode === "dark"? "navbar navbar-expand-lg navbar-dark bg-dark": "navbar navbar-expand-lg navbar-light bg-light"}>
-      <nav className={`navbar navbar-expand-lg navbar-${mode} bg-${mode}`}>
- <div className="container-fluid">
+      <div>
+      <nav className={`navbar fixed-top navbar-expand-lg navbar-${mode} bg-${mode}`}>
+      <div className="container-fluid">
           <Link className="navbar-brand" to="/">News-Genie</Link>          
           <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">          
             <span className="navbar-toggler-icon"></span>
@@ -30,6 +30,7 @@ export class Navbar extends Component {
           </div>
         </div>
       </nav>
+      </div>
     );
   }
 }
