@@ -270,14 +270,13 @@ export class News extends Component {
   }
   constructor(props) {
     super(props);
-    this.state = { articles: [], loading: false, page: 1 ,totalResults:0}
+    this.state = { articles: [], loading: false, page: 1 , totalResults: 0}
     document.title = `${this.capitalizeFirstLetter(props.category)} - News  Genie`;
   }
  
   async updateNews() {
     this.props.setProgress(10);
-    let url = `https://newsapi.org/v2/top-headlines?country=${this.props.country}&category=${this.props.category}&apiKey=${this.props.apiKey}&page=${this.state.page}&pageSize=${this.props.pageSize}`;
-    this.setState({ loading: true });
+    const url = `https://newsapi.org/v2/top-headlines?country=${this.props.country}&category=${this.props.category}&apiKey=${this.props.apiKey}&page=${this.state.page}&pageSize=${this.props.pageSize}`;    this.setState({ loading: true });
     let data = await fetch(url);
     this.props.setProgress(30);
     let parsedData = await data.json();
@@ -300,8 +299,9 @@ export class News extends Component {
   //   this.setState({ page: this.state.page + 1 });
   //   this.updateNews();
   // };
-  fetchMoreData = async () => {    
-    const url = `https://newsapi.org/v2/top-headlines?country=${this.props.country}&category=${this.props.category}&apikey=${this.props.apiKey}&page=${this.state.page + 1}&pageSize=${this.props.pageSize}`;
+  fetchMoreData = async () => { 
+       
+    const url = `https://newsapi.org/v2/top-headlines?country=${this.props.country}&category=${this.props.category}&apiKey=${this.props.apiKey}&page=${this.state.page +1}&pageSize=${this.props.pageSize}`;   
     this.setState({ page: this.state.page + 1 })
     let data = await fetch(url);
     let parsedData = await data.json()
@@ -367,3 +367,4 @@ export class News extends Component {
 
 export default News;
 //c08278b4489c46cdb50c59080ec39ef2
+// ${this.props.apiKey}

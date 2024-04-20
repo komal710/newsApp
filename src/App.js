@@ -25,7 +25,8 @@ toggleMode = () => {
     mode: prevState.mode === 'light' ? 'dark' : 'light',
   }));
 };
-apiKey = process.env.REACT_APP_NEWS_API
+apiKey =process.env.REACT_APP_NEWS_API
+// process.env.REACT_APP_NEWS_API
 state={
   progress: 0
 }
