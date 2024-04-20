@@ -366,5 +366,3 @@ export class News extends Component {
 }
 
 export default News;
-//c08278b4489c46cdb50c59080ec39ef2
-// ${this.props.apiKey}
